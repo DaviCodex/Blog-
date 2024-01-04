@@ -8,7 +8,10 @@ class BlogPostsController < ApplicationController
     @blog_post =BlogPost.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     redirect_to "/"
+  end
 
+  def new
+    @blog_post = BlogPost.new
   end
 
 end

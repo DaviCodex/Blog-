@@ -1,9 +1,9 @@
 <h1>My new blog</h1>
 
-<% @blog_posts.each do |item| %>
+<% @blog_posts.each do |blog_post| %>
     <div>
-        <h2> <%= link_to item.title, item%> </h2>
-        <p> <%= item.body%>  </p>
+        <h2> <%= link_to blog_post.title, blog_post%> </h2>
+        <p> <%= blog_post.body%>  </p>
     </div>
     
 <% end %>
