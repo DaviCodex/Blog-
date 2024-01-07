@@ -26,11 +26,15 @@ class BlogPostsController < ApplicationController
   end
 
   def create
+    # We are creating a new instance variable with the params of the blog_post
+    # we create a function to take these params, because we cant take it because rails works with strong params
+    # and he doesn't take any params, he only take the permited params
     @blog_post = BlogPost.new(blog_post_params)
-
+    #Now if the blogpost is save in the db he show us the current add
     if @blog_post.save
       redirect_to @blog_post
     else
+      #else he renders the new action, and change the status of 200 ok to 422 unprocessable_entity
       render :new, status: :unprocessable_entity
     end
 
@@ -51,7 +55,7 @@ class BlogPostsController < ApplicationController
   private
   #We create this function to protect our form
   #Params is a hash, in the hash we are searching the key of :blog_post
-  #if the key is present, with the permit method we indicates which params are allowed
+  #if the key (blog_post) is present, with the permit method we indicates which params are allowed
   #else we have an parameterMissing error
   def blog_post_params
     params.require(:blog_post).permit(:title, :body)
