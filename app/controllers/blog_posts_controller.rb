@@ -15,13 +15,13 @@ class BlogPostsController < ApplicationController
     @blog_post =BlogPost.find(params[:id])
     #This is like an exception, when we have a not found error the rescue block is active
     #And redirect us to the root_path
-    #root path it's form of reference the root route, but with out the localhost, bla bla
-    #only the route
+    #root path it's form of reference the root route, but with out the localhost, bla bla. Only the route
   rescue ActiveRecord::RecordNotFound
     redirect_to root_path
   end
 
   def new
+    #In this case we create a new instance variable, with a new instance of the model
     @blog_post = BlogPost.new
   end
 
@@ -49,7 +49,10 @@ class BlogPostsController < ApplicationController
   end
 
   private
-
+  #We create this function to protect our form
+  #Params is a hash, in the hash we are searching the key of :blog_post
+  #if the key is present, with the permit method we indicates which params are allowed
+  #else we have an parameterMissing error
   def blog_post_params
     params.require(:blog_post).permit(:title, :body)
   end

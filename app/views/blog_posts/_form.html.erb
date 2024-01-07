@@ -1,4 +1,9 @@
-
+<!-- ========== Start Section ========== -->
+    <!-- form with is helpper of rails, and the parameter is my blog_post model-->
+    <!-- the if checks, if the model have any errors, he prints the full array error of the object -->
+    <!-- in our case, he validates if the fields are blank, because we put the validation in the model  -->
+    <!-- And finally, the form, with the label and the text field and the text area -->
+<!-- ========== End Section ========== -->
 <%= form_with model: blog_post do |form|%>
     <% if form.object.errors.any? %>
         <div>
