@@ -2,6 +2,11 @@
 
 <% @blog_posts.each do |blog_post| %>
     <div>
+        <!-- ========== Start Section ========== -->
+            <!--link to is helpper in rails, the first parameter is what we want to display, in this case the title  -->
+            <!--The second , is the link what we want to go, is like an anchor tag whit href attribute-->
+            <!--we dont need to pass the id, rails is smarter and take it for us-->
+        <!-- ========== End Section ========== -->
         <h2> <%= link_to blog_post.title, blog_post%> </h2>
         <p> <%= blog_post.body%>  </p>
     </div>
