@@ -40,14 +40,23 @@ class BlogPostsController < ApplicationController
 
   end
   def edit
+    #I take the params of the route, in this case the id
+    #and i find the object in the db with the same id
+    #if the object is not in the db, we are redirect to the new form
     @blog_post = BlogPost.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to new_blog_post_path
   end
 
   def update
+    # In this varaible we're finding the object which we want to update
     @blog_post = BlogPost.find(params[:id])
+    # Now we are passing the params of the blog post like title or body
+    # if we have any field blank the update will return a true and send us to the blog post page, like the show action
     if @blog_post.update(blog_post_params)
       redirect_to @blog_post
     else
+      #in other wise we render the edit action like an unprocessable entity 
       render :edit, status: :unprocessable_entity
     end
   end
