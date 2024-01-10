@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-
+  before_action :set_blog_post, only: [:show,:edit,:update,:destroy] #, except: [:index, :new, :create]
   #This fucntion display all the post in the data base
   def index
     # @instance variable, i can send data to my views
@@ -12,12 +12,10 @@ class BlogPostsController < ApplicationController
     #the params funciton takes the info in the url of the route, it can be a number or anything
     #after params take the info of th url, the find function search in the db which id match whit the argument
     #and tara!! we have all the data in the variable, is like search in an array
-    @blog_post =BlogPost.find(params[:id])
     #This is like an exception, when we have a not found error the rescue block is active
     #And redirect us to the root_path
     #root path it's form of reference the root route, but with out the localhost, bla bla. Only the route
-  rescue ActiveRecord::RecordNotFound
-    redirect_to root_path
+
   end
 
   def new
@@ -43,22 +41,22 @@ class BlogPostsController < ApplicationController
     #I take the params of the route, in this case the id
     #and i find the object in the db with the same id
     #if the object is not in the db, we are redirect to the new form
-    @blog_post = BlogPost.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    redirect_to new_blog_post_path
   end
 
   def update
     # In this varaible we're finding the object which we want to update
-    @blog_post = BlogPost.find(params[:id])
     # Now we are passing the params of the blog post like title or body
     # if we have any field blank the update will return a true and send us to the blog post page, like the show action
     if @blog_post.update(blog_post_params)
       redirect_to @blog_post
     else
-      #in other wise we render the edit action like an unprocessable entity 
+      #in other wise we render the edit action like an unprocessable entity
       render :edit, status: :unprocessable_entity
     end
+  end
+  def destroy
+    @blog_post.destroy()
+    redirect_to root_path
   end
 
   private
@@ -68,5 +66,10 @@ class BlogPostsController < ApplicationController
   #else we have an parameterMissing error
   def blog_post_params
     params.require(:blog_post).permit(:title, :body)
+  end
+  def set_blog_post
+    @blog_post = BlogPost.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
   end
 end
