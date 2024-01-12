@@ -14,8 +14,20 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
   <div>
+    <header class="w-1464 h-53 relative">
+      <div class="w-[302px] h-[53px] opacity-20 bg-zinc-300 rounded-[11px]">
+        <img src="/app/assets/images/ruby.png" alt="Ruby-Logo">
+      </div>
+      <div class="">
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+    </header>
+  </div>
+  <div >
     <% if user_signed_in? %>
       <%= link_to 'New blog post', new_blog_post_path %>
       <%#= link_to 'Profile', edit_user_registration_path %>

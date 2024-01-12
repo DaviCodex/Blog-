@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # i change all the routes with the resources helper
   resources :blog_posts
-
+  
   # Defines the root path route ("/")
   root "blog_posts#index"
 
