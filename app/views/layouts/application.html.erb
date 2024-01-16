@@ -14,44 +14,12 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-  <div>
-    <header class="mt-5 ml-33 mr-16 mb-897 w-[1463px] h-[53px]">
-      <div class="w-[1463px] h-[53px] relative">
-    <div class="w-[302px] h-[53px] left-0 top-0 absolute">
-        <div class="w-[302px] h-[53px] left-0 top-0 absolute opacity-20 bg-zinc-300 rounded-[11px]"></div>
-        <div class="left-[82px] top-[14px] absolute text-black text-2xl font-normal font-['Kavoon'] leading-normal">El Rincón De Rails</div>
-        <img class="w-[47px] h-[45px] left-[14px] top-[4px] absolute rounded-[254px]" src="app/assets/images/ruby.png" />
-    </div>
-    <div class="w-[1089px] h-[53px] left-[374px] top-0 absolute">
-        <button class="w-[152px] h-[53px] left-0 top-0 absolute ">
-            <div class="w-[152px] h-[53px] left-0 top-0 absolute opacity-20 bg-zinc-300 rounded-[11px] hover:bg-zinc-400"></div>
-            <div class="left-[42px] top-[14px] absolute text-black text-2xl font-normal font-['Kavoon'] leading-normal">Home </div>
-        </button>
-        <button class="w-[152px] h-[53px] left-[182px] top-0 absolute">
-            <div class="w-[152px] h-[53px] left-0 top-0 absolute opacity-20 bg-zinc-300 rounded-[11px] hover:bg-zinc-400"></div>
-            <div class="left-[20px] top-[14px] absolute text-black text-2xl font-normal font-['Kavoon'] leading-normal">About me</div>
-        </button>
-        <button class="w-[152px] h-[53px] left-[364px] top-0 absolute">
-            <div class="w-[152px] h-[53px] left-0 top-0 absolute opacity-20 bg-zinc-300 rounded-[11px] hover:bg-zinc-400"></div>
-            <div class="left-[36px] top-[14px] absolute text-black text-2xl font-normal font-['Kavoon'] leading-normal">Guides</div>
-        </button>
-        <button class="w-[152px] h-[53px] left-[546px] top-0 absolute">
-            <div class="w-[152px] h-[53px] left-0 top-0 absolute opacity-20 bg-zinc-300 rounded-[11px] hover:bg-zinc-400"></div>
-            <div class="left-[50px] top-[14px] absolute text-black text-2xl font-normal font-['Kavoon'] leading-normal">Blog</div>
-        </button>
-        <button class="w-[152px] h-[53px] left-[755px] top-0 absolute">
-            <div class="w-[152px] h-[53px] left-0 top-0 absolute bg-black rounded-[11px] hover:bg-gray-700"></div>
-            <div class="left-[33px] top-[14px] absolute text-white text-2xl font-normal font-['Kavoon'] leading-normal">Sign up</div>
-        </button>
-        <button class="w-[152px] h-[53px] left-[937px] top-0 absolute">
-            <div class="w-[152px] h-[53px] left-0 top-0 absolute bg-black rounded-[11px] hover:bg-gray-700"></div>
-            <div class="left-[33px] top-[14px] absolute text-white text-2xl font-normal font-['Kavoon'] leading-normal">Log in</div>
-        </button>
-    </div>
-</div>
+
+    <header>
+      <div class="">
+
+      </div>
     </header>
-  </div>
-  <div >
     <% if user_signed_in? %>
       <%= link_to 'New blog post', new_blog_post_path %>
       <%#= link_to 'Profile', edit_user_registration_path %>
