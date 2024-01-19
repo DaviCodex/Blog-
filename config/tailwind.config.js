@@ -14,6 +14,8 @@ module.exports = {
       },
       colors:{
         'gris_botones': '#f0e7e9',
+        'border-gris':'#261b231a',
+        'text-gris':'#5a5153',
       },
     },
   },
