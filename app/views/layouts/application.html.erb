@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -14,15 +13,8 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
-    <div class="  w-[1463px] h-[132px] bg-white border-dashed border-2 border-black" >
-      <button class="  w-28 h-28 bg-red-600 rounded-full hover:bg-indigo-950">
-      <%= image_tag 'icons8-ruby-on-rails-96.png' %>
-      </button>
-      <div class=" max-w-full h-5">
-    </div>
-        
-    </div>
+
+  <div>
     <% if user_signed_in? %>
       <%= link_to 'New blog post', new_blog_post_path %>
       <%#= link_to 'Profile', edit_user_registration_path %>
@@ -32,9 +24,7 @@
       <%#= link_to 'Sign_up', new_user_registration_path %>
     <% end %>
   </div>
-  
 
     <%= yield %>
-
   </body>
 </html>
