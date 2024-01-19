@@ -1,14 +1,29 @@
-<h1>My new blog</h1>
 
-<% @blog_posts.each do |blog_post| %>
-    <div>
-        <!-- ========== Start Section ========== -->
-            <!--link to is helpper in rails, the first parameter is what we want to display, in this case the title  -->
-            <!--The second , is the link what we want to go, is like an anchor tag whit href attribute-->
-            <!--we dont need to pass the id, rails is smarter and take it for us-->
-        <!-- ========== End Section ========== -->
-        <h2> <%= link_to blog_post.title, blog_post%> </h2>
-        <p> <%= blog_post.body%>  </p>
+<div class="w-[1463px] h-[20px] py-16 ">
+    <div class="flex justify-center items-center w-[1080px] h-[44px] mx-[191.500px]">
+        <div class=" flex flex-row justify-center items-center ">
+            <span class=" m-4 flex justify-center items-center p-4 px-4 text-lg font-semibold text-center w-[99.84px] h-[42px] font-calibre hover:text-red-500 hover:bg-gris_botones rounded-md ">Everything</span>
+            <span class=" m-4 flex justify-center items-center p-4 px-4 text-lg font-semibold text-center w-[88.14px] h-[42px] font-calibre hover:text-red-500 hover:bg-gris_botones rounded-md ">Realesses</span>
+            <span class=" m-4 flex justify-center items-center p-4 px-4 text-lg font-semibold text-center w-[50.258px] h-[42px] font-calibre hover:text-red-500 hover:bg-gris_botones rounded-md">News</span>
+        </div>
     </div>
+</div>
+<div class="w-[1080px] h-[2143px] mx-[191.500px] ">
     
-<% end %>
+    <% @blog_posts.each do |blog_post| %>
+        <div class="flex flex-row gap-x-8 py-10 border-t-4 border-gris">
+            <div class=" font-mono font-semibold  text-xl">
+                January 19 2024
+            </div>
+            <div>
+                <!-- ========== Start Section ========== -->
+                    <!--link to is helpper in rails, the first parameter is what we want to display, in this case the title  -->
+                    <!--The second , is the link what we want to go, is like an anchor tag whit href attribute-->
+                    <!--we dont need to pass the id, rails is smarter and take it for us-->
+                <!-- ========== End Section ========== -->
+                    <h2 class="font-mono font-bold text-3xl text-red-500 underline hover:text-indigo-950  "> <%= link_to blog_post.title, blog_post%> </h2>
+                    <p  class="font-mono font-normal text-xl text-gris"> <%= blog_post.body%>  </p>
+            </div>
+        </div>
+    <% end %>
+</div>
