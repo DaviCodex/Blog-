@@ -1,3 +1,9 @@
 <%= link_to 'Edit blog post', edit_blog_post_path(@blog_post) if user_signed_in? %>
-<h1> <%= @blog_post.title %> </h1>
-<p> <%= @blog_post.body%> </p>
+<div class="flex flex-col justify-center items-center">
+    <h6 class="text-xl font-semibold text-black "> Saturday, January 20, 2024</h6>
+    <h1 class="text-4xl font-bold text-red-500"> <%= @blog_post.title %> </h1>
+    <h6 class="text-xl font-normal text-gris "> Autor </h6>
+    <p class="pt-[33px] border-gris border-t-4 mt-16 mx-8"> <%= @blog_post.body%> </p>
+
+</div>
+    
